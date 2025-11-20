@@ -1,2 +1,10 @@
 ForensicMap_3D_specification_MVP.yaml
 ForensicMap_3D_specification_full.yaml
+node_modules
+dist/
+dist-electron/
+dist_electron_build/
+*.log
+.DS_Store
+aa.json
+aa_report.pdf

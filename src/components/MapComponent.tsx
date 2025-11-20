@@ -112,7 +112,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({
     console.log('Rendering map with:', { zeroPoint, pointsCount: points.length, layersCount: layers.length })
 
     return (
-        <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+        <div id="map-capture-container" style={{ width: '100%', height: '600px', position: 'relative' }}>
             {settingZeroPoint && (
                 <div style={{
                     position: 'absolute',

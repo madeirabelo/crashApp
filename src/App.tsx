@@ -89,7 +89,7 @@ function App() {
                             </div>
                             <InputModule onAddPoint={handleAddPoint} />
                             <AssetLibrary onAddAsset={handleAddAsset} />
-                            <OutputModule project={project} />
+                            <OutputModule project={project} viewState={viewState} />
                             <div style={{ marginTop: '20px' }}>
                                 <h3>Points & Assets</h3>
                                 <ul>
