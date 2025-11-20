@@ -1,0 +1,66 @@
+{
+  "name": "crashapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && npm run electron:build && electron-builder",
+    "rebuild": "electron-rebuild",
+    "preview": "vite preview",
+    "electron:build": "tsc -p electron/tsconfig.json",
+    "start": "npm run electron:build && concurrently \"vite\" \"wait-on tcp:5173 && electron .\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madeirabelo/crashApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/madeirabelo/crashApp/issues"
+  },
+  "homepage": "https://github.com/madeirabelo/crashApp#readme",
+  "dependencies": {
+    "deck.gl": "^9.2.2",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.4",
+    "mapbox-gl": "^3.16.0",
+    "maplibre-gl": "^5.13.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-map-gl": "^8.1.0"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^4.0.1",
+    "@types/mapbox-gl": "^3.4.1",
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "concurrently": "^9.2.1",
+    "electron": "^39.2.2",
+    "electron-builder": "^26.0.12",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2",
+    "wait-on": "^9.0.3"
+  },
+  "build": {
+    "appId": "com.forensicmap.app",
+    "productName": "ForensicMap 3D",
+    "directories": {
+      "output": "dist_electron_build"
+    },
+    "files": [
+      "dist/**/*",
+      "dist-electron/**/*"
+    ],
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
