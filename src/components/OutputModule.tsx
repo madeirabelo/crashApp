@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import jsPDF from 'jspdf'
-import html2canvas from 'html2canvas'
 
 interface OutputModuleProps {
     project: any
